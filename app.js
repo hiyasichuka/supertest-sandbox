@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-// testsエンドポイント
+// ルートエンドポイント
 app.get("/", async (req, res) => {
   res.send({ status: "running" });
 });
