@@ -2,12 +2,12 @@ import express from "express";
 
 const app = express();
 
-// testsエンドポイント
+// GET
 app.get("/", async (req, res) => {
   res.send({ status: "running" });
 });
 
-// usersエンドポイント
+// POST
 app.use(express.json());
 app.post("/users", async (req, res) => {
   const { password, username } = req.body;
@@ -15,7 +15,6 @@ app.post("/users", async (req, res) => {
     res.sendStatus(400);
     return;
   }
-
   res.send({ userId: 0 });
 });
 
