@@ -37,8 +37,8 @@ describe("POST /users", () => {
 
   describe("ユーザー名とパスワードが入力されていないとき", () => {
     test("ステータスコード400が返ってくることを確認する", async () => {
-      const bodyData = [{ username: "user" }, { password: "pass" }, {}];
-      for (const body of bodyData) {
+      const bodies = [{ username: "user" }, { password: "pass" }, {}];
+      for (const body of bodies) {
         const response = await request(app).post("/users").send(body);
         expect(response.statusCode).toBe(400);
       }
